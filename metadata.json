@@ -1,0 +1,6 @@
+{
+  "name": "Taskora",
+  "description": "Premium native Android productivity and task manager for daily planning, project workflows, and AI insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

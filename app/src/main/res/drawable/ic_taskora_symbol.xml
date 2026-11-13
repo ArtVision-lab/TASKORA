@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Top Bar of T with subtle slant and curve -->
+    <path
+        android:pathData="M 16,22 C 16,17.5 19.5,14 24,14 L 74,14 C 77.5,14 80,17 79,20.5 L 75.5,33 C 74.8,35.5 72.5,37 70,37 L 22,37 C 18,37 16,33 16,30 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="16"
+                android:startY="14"
+                android:endX="80"
+                android:endY="37"
+                android:type="linear">
+                <item android:offset="0" android:color="#267653" />
+                <item android:offset="1" android:color="#174C3C" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Stem of T with rounded base -->
+    <path
+        android:pathData="M 37,32 L 63,32 L 63,68 C 63,77 56,84 47,84 L 40,84 C 36,84 37,80 37,76 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="37"
+                android:startY="32"
+                android:endX="63"
+                android:endY="84"
+                android:type="linear">
+                <item android:offset="0" android:color="#267653" />
+                <item android:offset="0.6" android:color="#174C3C" />
+                <item android:offset="1" android:color="#101C18" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Dynamic Slicing Checkmark in Vibrant Orange -->
+    <path
+        android:pathData="M 32,46 L 47,61 L 84,24 L 78,20 L 47,51 L 37,41 Z"
+        android:fillColor="#FF8A35" />
+
+    <!-- Slicing Checkmark Upper Stroke Highlight -->
+    <path
+        android:pathData="M 47,56 L 86,22 C 86,22 75,34 50,56 Z"
+        android:fillColor="#FFB36B" />
+
+    <!-- Digital Accent Node 1 (Top-right) -->
+    <path
+        android:pathData="M 82,14 H 89 V 21 H 82 Z"
+        android:fillColor="#FF8A35" />
+
+    <!-- Digital Accent Node 2 (Outer) -->
+    <path
+        android:pathData="M 76,23 H 81 V 28 H 76 Z"
+        android:fillColor="#FFB36B" />
+
+    <!-- Digital Accent Node 3 (Lower) -->
+    <path
+        android:pathData="M 84,25 H 88 V 29 H 84 Z"
+        android:fillColor="#FF8A35" />
+</vector>
