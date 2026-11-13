@@ -156,8 +156,6 @@ class TaskoraRepository(context: Context) {
     _projects.update { listOf(newProject) + it }
   }
 
-  }
-
   private fun createInitialTasks(): List<TaskItem> {
     return listOf(
       TaskItem(
@@ -407,7 +405,5 @@ class TaskoraRepository(context: Context) {
         isCompleted = false
       )
     )
-  }
-
   }
 }

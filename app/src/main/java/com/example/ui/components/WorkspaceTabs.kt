@@ -57,7 +57,7 @@ fun WorkspaceSelectorTabs(
   language: AppLanguage,
   modifier: Modifier = Modifier
 ) {
-  val isDark = isSystemInDarkTheme() || MaterialTheme.colorScheme.background == DarkBackground
+  val isDark = MaterialTheme.colorScheme.background == DarkBackground
   val workspaces = listOf(
     WorkspaceType.ALL,
     WorkspaceType.PERSONAL,

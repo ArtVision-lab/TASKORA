@@ -64,7 +64,7 @@ fun TaskCard(
   modifier: Modifier = Modifier
 ) {
   val isAr = language == AppLanguage.AR
-  val isDark = isSystemInDarkTheme() || MaterialTheme.colorScheme.background == DarkBackground
+  val isDark = MaterialTheme.colorScheme.background == DarkBackground
   val displayTitle = if (isAr) task.titleAr else task.title
   val displayDesc = if (isAr) task.descriptionAr else task.description
   val displayDue = if (isAr) task.dueDateLabelAr else task.dueDateLabel

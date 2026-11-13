@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
@@ -141,7 +142,7 @@ fun TasksScreen(
 
       // Filter tabs: All, Today, Upcoming, Completed, Overdue
       item {
-        val isDark = isSystemInDarkTheme() || MaterialTheme.colorScheme.background == DarkBackground
+        val isDark = MaterialTheme.colorScheme.background == DarkBackground
         Row(
           modifier = Modifier
             .fillMaxWidth()
@@ -302,7 +303,7 @@ fun PriorityChip(
   onClick: () -> Unit,
   testTag: String
 ) {
-  val isDark = isSystemInDarkTheme() || MaterialTheme.colorScheme.background == DarkBackground
+  val isDark = MaterialTheme.colorScheme.background == DarkBackground
   val chipBg = if (isSelected) {
     if (isDark) color.copy(alpha = 0.25f) else color.copy(alpha = 0.16f)
   } else {

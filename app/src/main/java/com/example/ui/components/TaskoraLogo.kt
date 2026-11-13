@@ -212,7 +212,7 @@ fun TaskoraHeaderBrand(
   language: AppLanguage = AppLanguage.EN,
   showTagline: Boolean = false
 ) {
-  val isDark = isSystemInDarkTheme() || MaterialTheme.colorScheme.background == DarkBackground
+  val isDark = MaterialTheme.colorScheme.background == DarkBackground
 
   Row(
     modifier = modifier,

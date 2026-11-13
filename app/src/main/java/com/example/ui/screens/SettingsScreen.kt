@@ -46,6 +46,8 @@ import androidx.compose.ui.unit.sp
 import com.example.data.model.AppLanguage
 import com.example.data.model.AppThemeMode
 import com.example.ui.localization.TaskoraStrings
+import com.example.ui.theme.BrightEmeraldGreen
+import com.example.ui.theme.DarkBackground
 import com.example.ui.theme.DeepForestGreen
 import com.example.ui.theme.EmeraldGreen
 import com.example.ui.theme.VibrantOrange
@@ -289,6 +291,8 @@ fun SettingsScreen(
           color = MaterialTheme.colorScheme.onSurfaceVariant
         )
         Spacer(modifier = Modifier.height(12.dp))
+        val isDark = MaterialTheme.colorScheme.background == DarkBackground
+        val actionAccent = if (isDark) BrightEmeraldGreen else DeepForestGreen
         androidx.compose.material3.OutlinedButton(
           onClick = onReplaySplash,
           shape = RoundedCornerShape(10.dp),
@@ -298,13 +302,13 @@ fun SettingsScreen(
             imageVector = Icons.Default.BrightnessAuto,
             contentDescription = null,
             modifier = Modifier.size(16.dp),
-            tint = DeepForestGreen
+            tint = actionAccent
           )
           Spacer(modifier = Modifier.width(8.dp))
           Text(
             text = if (isAr) "عرض شاشة الترحيب (Splash)" else "Preview Splash Screen",
             fontSize = 12.sp,
-            color = DeepForestGreen,
+            color = actionAccent,
             fontWeight = FontWeight.SemiBold
           )
         }
@@ -337,10 +341,11 @@ fun SettingsSectionCard(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.fillMaxWidth()
       ) {
+        val isDark = MaterialTheme.colorScheme.background == DarkBackground
         Icon(
           imageVector = icon,
           contentDescription = null,
-          tint = DeepForestGreen,
+          tint = if (isDark) BrightEmeraldGreen else DeepForestGreen,
           modifier = Modifier.size(20.dp)
         )
         Spacer(modifier = Modifier.width(10.dp))
@@ -364,14 +369,15 @@ fun LanguageOptionRow(
   onClick: () -> Unit,
   testTag: String
 ) {
+  val isDark = MaterialTheme.colorScheme.background == DarkBackground
   Box(
     modifier = Modifier
       .fillMaxWidth()
       .clip(RoundedCornerShape(12.dp))
-      .background(if (isSelected) DeepForestGreen.copy(alpha = 0.12f) else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.4f))
+      .background(if (isSelected) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.4f))
       .border(
         width = 1.5.dp,
-        color = if (isSelected) EmeraldGreen else Color.Transparent,
+        color = if (isSelected) (if (isDark) BrightEmeraldGreen else EmeraldGreen) else Color.Transparent,
         shape = RoundedCornerShape(12.dp)
       )
       .clickable { onClick() }
@@ -387,7 +393,7 @@ fun LanguageOptionRow(
         Text(
           text = label,
           style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.SemiBold),
-          color = if (isSelected) DeepForestGreen else MaterialTheme.colorScheme.onSurface
+          color = if (isSelected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface
         )
         Text(
           text = subLabel,

@@ -89,7 +89,7 @@ fun HomeScreen(
   modifier: Modifier = Modifier
 ) {
   val isAr = language == AppLanguage.AR
-  val isDark = isSystemInDarkTheme() || MaterialTheme.colorScheme.background == DarkBackground
+  val isDark = MaterialTheme.colorScheme.background == DarkBackground
   val brightEmerald = if (isDark) BrightEmeraldGreen else EmeraldGreen
   val dateString = if (isAr) "الأربعاء، ١١ نوفمبر" else "Wednesday, Nov 11"
   val remainingCount = (todayTotalCount - todayCompletedCount).coerceAtLeast(0)
@@ -498,7 +498,7 @@ fun QuickActionButton(
     label = "quickActionScale"
   )
 
-  val isDark = isSystemInDarkTheme() || MaterialTheme.colorScheme.background == DarkBackground
+  val isDark = MaterialTheme.colorScheme.background == DarkBackground
   val cardBg = if (isDark) DarkElevatedCard else MaterialTheme.colorScheme.surface
   val cardBorder = if (isPressed) EmeraldGreen else MaterialTheme.colorScheme.outline.copy(alpha = if (isDark) 0.6f else 0.8f)
 

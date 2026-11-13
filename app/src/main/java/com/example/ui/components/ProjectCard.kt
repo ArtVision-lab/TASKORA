@@ -50,7 +50,7 @@ fun ProjectCard(
   compact: Boolean = false
 ) {
   val isAr = language == AppLanguage.AR
-  val isDark = isSystemInDarkTheme() || MaterialTheme.colorScheme.background == DarkBackground
+  val isDark = MaterialTheme.colorScheme.background == DarkBackground
   val displayName = if (isAr) project.nameAr else project.name
   val displayCategory = if (isAr) project.categoryAr else project.category
 

@@ -65,7 +65,7 @@ fun SplashScreen(
   language: AppLanguage,
   modifier: Modifier = Modifier
 ) {
-  val isDark = isSystemInDarkTheme() || MaterialTheme.colorScheme.background == DarkBackground
+  val isDark = MaterialTheme.colorScheme.background == DarkBackground
 
   // Animation triggers
   var startAnim by remember { mutableStateOf(false) }
